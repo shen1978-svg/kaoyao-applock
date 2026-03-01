@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">訓獸神器</string>
+    <string name="service_description">透過教育測驗引導小孩正確使用手機，需開啟此服務以進行 App 監控與鎖定。</string>
+</resources>
