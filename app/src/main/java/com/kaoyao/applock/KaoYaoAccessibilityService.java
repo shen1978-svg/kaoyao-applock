@@ -6,6 +6,10 @@ import android.view.accessibility.AccessibilityEvent;
 import android.util.Log;
 import com.kaoyao.applock.R;
 
+import android.content.SharedPreferences;
+import java.util.Set;
+import java.util.HashSet;
+
 /**
  * 專業版 - 教育解鎖核心攔截服務 (Android)
  * 使用 Accessibility Service 監控頂層 App 變化
@@ -21,7 +25,7 @@ public class KaoYaoAccessibilityService extends AccessibilityService {
                 String topPackageName = event.getPackageName().toString();
                 Log.d(TAG, "偵測到頂層 App: " + topPackageName);
 
-                // 檢查是否為受限 App (範例：YouTube, TikTok)
+                // 2.0 版：改從設定中檢查是否為受限 App
                 if (isRestrictedApp(topPackageName)) {
                     launchQuizOverlay();
                 }
@@ -30,9 +34,12 @@ public class KaoYaoAccessibilityService extends AccessibilityService {
     }
 
     private boolean isRestrictedApp(String packageName) {
-        // 此處邏輯應與家長設定台同步
-        return packageName.equals("com.google.android.youtube") || 
-               packageName.equals("com.zhiliaoapp.musically"); // TikTok
+        // 從 SharedPreferences 讀取家長設定的黑名單
+        SharedPreferences prefs = getSharedPreferences("KaoYaoPrefs", MODE_PRIVATE);
+        Set<String> blockedApps = prefs.getStringSet("blocked_apps", new HashSet<String>());
+        
+        // 如果這個 App 在名單中，就攔截它！
+        return blockedApps.contains(packageName);
     }
 
     private void launchQuizOverlay() {
