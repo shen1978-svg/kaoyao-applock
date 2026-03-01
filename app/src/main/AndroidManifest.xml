@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kaoyao.applock">
+
+    <!-- 必要的權限設定 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:label="教育解鎖專業版"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+
+        <!-- 1. 核心攔截服務 (Accessibility Service) -->
+        <service
+            android:name=".KaoYaoAccessibilityService"
+            android:label="教育解鎖 - 智能監控"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <!-- 2. Apple 風格測驗 Activity -->
+        <activity
+            android:name=".QuizActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+
+    </application>
+</manifest>
