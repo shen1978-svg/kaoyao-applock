@@ -1,6 +1,7 @@
 package com.kaoyao.applock;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,8 +16,6 @@ public class QuizActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        // 這裡暫時使用動態生成的佈局來模擬簡潔風格
         setContentView(R.layout.activity_quiz); 
 
         TextView questionText = findViewById(R.id.question_text);
