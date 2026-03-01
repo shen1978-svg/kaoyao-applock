@@ -26,7 +26,7 @@ jobs:
         run: gradle assembleDebug --stacktrace
 
       - name: Upload APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: KaoYao_AppLock_Debug.apk
           path: app/build/outputs/apk/debug/*.apk

@@ -11,6 +11,15 @@
         android:label="訓獸神器"
         android:theme="@style/Theme.KaoYao">
 
+        <!-- 0. 主進入點 -->
+        <activity android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <!-- 1. 核心攔截服務 (Accessibility Service) -->
         <service
             android:name=".KaoYaoAccessibilityService"
