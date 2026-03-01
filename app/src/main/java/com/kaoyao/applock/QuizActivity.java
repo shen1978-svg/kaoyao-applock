@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.kaoyao.applock.R;
 
 /**
  * 專業版 - 教育解鎖測驗頁面 (Android)

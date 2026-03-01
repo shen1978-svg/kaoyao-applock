@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
+import com.kaoyao.applock.R;
 
 public class MainActivity extends AppCompatActivity {
     @Override
