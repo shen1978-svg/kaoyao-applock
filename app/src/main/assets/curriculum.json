@@ -1,58 +1,37 @@
-{
-  "curriculum_version": "108_Taiwan",
-  "last_updated": "2026-03-01",
-  "data": {
-    "preschool": {
-      "level_name": "幼兒園",
-      "subjects": {
-        "visual_cognition": {
-          "name": "視覺認知",
-          "questions": [
-            {"id": "p001", "type": "image", "q": "哪個是紅色的蘋果？", "options": ["🍏", "🍎", "🍐"], "a": "🍎"},
-            {"id": "p002", "type": "image", "q": "哪隻是可愛的小貓？", "options": ["🐶", "🐱", "🐭"], "a": "🐱"},
-            {"id": "p003", "type": "image", "q": "哪一個是圓形？", "options": ["📐", "🔴", "🟦"], "a": "🔴"}
-          ]
-        }
-      }
-    },
-    "grade_2": {
-      "level_name": "小學二年級",
-      "subjects": {
-        "math": {
-          "name": "數學 (九九乘法)",
-          "questions": [
-            {"id": "g2m001", "type": "text", "q": "7 x 8 = ?", "options": ["54", "56", "64"], "a": "56"},
-            {"id": "g2m002", "type": "text", "q": "6 x 4 = ?", "options": ["24", "26", "22"], "a": "24"},
-            {"id": "g2m003", "type": "text", "q": "9 x 3 = ?", "options": ["27", "21", "24"], "a": "27"}
-          ]
-        },
-        "chinese": {
-          "name": "國語 (部首識字)",
-          "questions": [
-            {"id": "g2c001", "type": "text", "q": "「海」的部首是什麼？", "options": ["氵", "土", "木"], "a": "氵"},
-            {"id": "g2c002", "type": "text", "q": "「跑」的部首是什麼？", "options": ["手", "足", "走"], "a": "足"}
-          ]
-        }
-      }
-    },
-    "grade_6": {
-      "level_name": "小學六年級",
-      "subjects": {
-        "math_logic": {
-          "name": "數學 (因數倍數與邏輯)",
-          "questions": [
-            {"id": "g6m001", "type": "text", "q": "12 和 18 的最大公因數是多少？", "options": ["3", "6", "9"], "a": "6"},
-            {"id": "g6m002", "type": "text", "q": "下列哪個數字是質數？", "options": ["21", "27", "31"], "a": "31"}
-          ]
-        },
-        "chinese_classical": {
-          "name": "國語 (文言文與成語)",
-          "questions": [
-            {"id": "g6c001", "type": "text", "q": "「溫故而知新」出自哪部經典？", "options": ["論語", "孟子", "大學"], "a": "論語"},
-            {"id": "g6c002", "type": "text", "q": "「三人行，必有我師焉」中，「焉」的意思是？", "options": ["在其中", "語助詞", "如何"], "a": "在其中"}
-          ]
-        }
-      }
-    }
+[
+  {
+    "id": 1,
+    "subject": "國語",
+    "question": "「海」的部首是什麼？",
+    "options": ["氵", "土", "木", "火"],
+    "answer": "氵"
+  },
+  {
+    "id": 2,
+    "subject": "數學",
+    "question": "請問 25 + 18 等於多少？",
+    "options": ["33", "43", "53", "45"],
+    "answer": "43"
+  },
+  {
+    "id": 3,
+    "subject": "國語",
+    "question": "「這本書很有趣」中的「有趣」是什麼詞性？",
+    "options": ["名詞", "動詞", "形容詞", "介係詞"],
+    "answer": "形容詞"
+  },
+  {
+    "id": 4,
+    "subject": "數學",
+    "question": "三角形的內角總和是多少度？",
+    "options": ["90", "180", "360", "270"],
+    "answer": "180"
+  },
+  {
+    "id": 5,
+    "subject": "英文",
+    "question": "「蘋果」的英文怎麼拼？",
+    "options": ["Apply", "Apple", "April", "App"],
+    "answer": "Apple"
   }
-}
+]

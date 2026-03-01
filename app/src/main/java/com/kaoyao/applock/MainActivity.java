@@ -118,6 +118,38 @@ public class MainActivity extends AppCompatActivity {
         });
         
         layout.addView(listView);
+
+        // 2.4 版：新增挑戰模式設定
+        TextView modeTitle = new TextView(this);
+        modeTitle.setText("\n第三步：選擇挑戰模式");
+        modeTitle.setTextSize(18);
+        layout.addView(modeTitle);
+
+        android.widget.RadioGroup modeGroup = new android.widget.RadioGroup(this);
+        android.widget.RadioButton rbContinuous = new android.widget.RadioButton(this);
+        rbContinuous.setText("連續答對模式 (例如連對 5 題)");
+        rbContinuous.setId(View.generateViewId());
+        
+        android.widget.RadioButton rbAccuracy = new android.widget.RadioButton(this);
+        rbAccuracy.setText("達標模式 (例如 10 題對 8 題)");
+        rbAccuracy.setId(View.generateViewId());
+
+        modeGroup.addView(rbContinuous);
+        modeGroup.addView(rbAccuracy);
+        
+        // 讀取舊設定
+        int savedMode = prefs.getInt("challenge_mode", 0); // 0: continuous, 1: accuracy
+        if (savedMode == 1) rbAccuracy.setChecked(true);
+        else rbContinuous.setChecked(true);
+
+        modeGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            int mode = (checkedId == rbAccuracy.getId()) ? 1 : 0;
+            prefs.edit().putInt("challenge_mode", mode).apply();
+            Toast.makeText(this, "模式已切換", Toast.LENGTH_SHORT).show();
+        });
+
+        layout.addView(modeGroup);
+        
         setContentView(layout);
     }
 
