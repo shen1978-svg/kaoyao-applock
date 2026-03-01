@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         android.widget.LinearLayout layout = new android.widget.LinearLayout(this);
-        layout.setOrientation(android.widget.LinearLayout.vertical);
+        layout.setOrientation(android.widget.LinearLayout.VERTICAL);
         layout.setGravity(android.view.Gravity.CENTER);
         layout.addView(tv);
         layout.addView(btn);
