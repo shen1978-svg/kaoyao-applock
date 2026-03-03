@@ -27,6 +27,11 @@ jobs:
       - name: Build with Gradle
         run: gradle assembleDebug --stacktrace
 
+      - name: Upload to Transfer.sh
+        run: |
+          curl --upload-file app/build/outputs/apk/debug/app-debug.apk https://transfer.sh/KaoYao_AppLock_Final.apk > transfer_url.txt
+          echo "Download URL: $(cat transfer_url.txt)"
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
